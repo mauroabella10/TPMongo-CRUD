@@ -80,7 +80,7 @@ Para probar la creación de un usuario con `POST /api/user/create`, puedes usar 
   "lastName": "abella",
   "age": 24,
   "password": "Qwerty123",
-  "email": "mabella@gmail.com",
+  "email": "mabella@gmail.com"
 }
 ```
 
@@ -88,9 +88,9 @@ Para probar la creación de un usuario con `POST /api/user/create`, puedes usar 
 Para probar la creación de un producto con `POST /api/product/create`, puedes usar el siguiente ejemplo:
 ```json
 {
-  "name": "zapas",
+  "name": "Medialunas",
   "status": "AVAILABLE",
-  "price": 10
+  "price": 100
 }
 ```
 
@@ -98,7 +98,7 @@ Para probar la creación de un producto con `POST /api/product/create`, puedes u
 Para probar la creación de una categoría con `POST /api/category/create`, puedes usar el siguiente ejemplo:
 ```json
 {
-  "name": "zapas",
+  "name": "Comestibles"
 }
 ```
 
