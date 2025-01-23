@@ -6,6 +6,6 @@ export function verifyToken(token) {
 
        return decoded;
     } catch (error) {
-        return new Error("Token invalid");
+        return Error("Token invalid");
     }
 };

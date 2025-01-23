@@ -2,22 +2,21 @@ import { verifyToken } from "../utils/verifyToken.js";
 
 export const verifyTokenMiddleware = (req, res, next) => {
     try {
-        const authHeader = req.session.token;
+        const authHeader = req.headers.authorization;
 
-        if (!authHeader || !authHeader.startWith("Bearer ")){
+        if (!authHeader){
             return res.status(400).json({ message: "Token de acceso no proporcionado" });
         } 
 
-        const token = authHeader.split(" ")[1];
-
-        const decoded = verifyToken(token)
+        const decoded = verifyToken(authHeader)
 
         console.log({decoded});
 
         req.user = decoded;
         
         next();
+
     } catch (error) {
-        return res.status(400).json({ message: "Token de acceso invalido" });
+        return res.status(500).json({ message: "Token de acceso invalido" });
     }
 };
